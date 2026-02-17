@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的简历</title>
+    <link rel="stylesheet" href="../.workers/static/style.css">
+    <script src="../.workers/static/script.js"></script>
+    <style>
+    </style>
+    <script>
+        // 随机背景图片设置
+        document.addEventListener('DOMContentLoaded', function() {
+            // 所有背景图片文件名
+            var wallpapers = ["0.jpg","1.png","2.webp","3.jpg","4.png","5.jpg","6.png","7.jpg","8.jpg","9.jpg"];
+            // 背景图片基础路径
+            var basePath = "../.workers/background/";
+            // 随机选择一张图片
+            var randomIndex = Math.floor(Math.random() * wallpapers.length);
+            var randomWallpaper = wallpapers[randomIndex];
+            // 完整背景图片路径
+            var wallpaperPath = basePath + randomWallpaper;
+            // 设置背景图片
+            document.body.style.backgroundImage = "url('" + wallpaperPath + "')";
+            // 确保背景图片正确显示
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundAttachment = "fixed";
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>📁我的简历</h3>
+            <div class="header-info">
+                <p>生成时间: 2026-02-17 13:42:31</p>
+                <p> 我的简历——索引目录</p>
+            </div>
+        </header>
+
+        <div class="file-list">
+            <div class="file-list-header">
+                <div>名称</div>
+                <div>大小</div>
+                <div>修改时间</div>
+            </div>
+            <div class="file-list-content">
+                <details open class="directory-details root-directory">
+                    <summary class="directory-summary">
+                        <div class="file-item">
+                            <div class="file-name">
+                                <span class="directory-icon">📁</span>
+                                <a href="../list.html">/</a>
+                            </div>
+                            <div class="file-size">-</div>
+                            <div class="file-date">-</div>
+                        </div>
+                    </summary>
+                    <div class="subdirectory">
+                <div class="file-item">
+                    <div class="file-name">
+                        <span class="directory-icon">📁</span>
+                        <a href="../list.html">.. /</a>
+                    </div>
+                    <div class="file-size">-</div>
+                    <div class="file-date">-</div>
+                </div>
+                <div class="file-item">
+                    <div class="file-name">
+                        <span class="file-icon">📄</span>
+                        <a href="求职申请&HR须知.html">求职申请&HR须知.html</a>
+                    </div>
+                    <div class="file-size">30.13 KB</div>
+                    <div class="file-date">2026-02-17 13:40</div>
+                </div>
+                <div class="file-item">
+                    <div class="file-name">
+                        <span class="file-icon">📝</span>
+                        <a href="求职申请&HR须知.md">求职申请&HR须知.md</a>
+                    </div>
+                    <div class="file-size">6.66 KB</div>
+                    <div class="file-date">2026-02-17 13:40</div>
+                </div>
+                <div class="file-item">
+                    <div class="file-name">
+                        <span class="file-icon">📄</span>
+                        <a href="求职申请&HR须知.pdf">求职申请&HR须知.pdf</a>
+                    </div>
+                    <div class="file-size">234.16 KB</div>
+                    <div class="file-date">2026-02-17 13:40</div>
+                </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <br>
+        <!-- 添加readme部分 -->
+        <div class="readme-section"><p>------</p></div>
+        
+        <div class="footer">
+            <p>索引由自动生成工具创建 | 生成时间: 2026-02-17 13:42:31</p>
+        </div>
+    </div>
+</body>
+</html>

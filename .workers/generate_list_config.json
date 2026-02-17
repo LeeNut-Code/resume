@@ -1,0 +1,31 @@
+{
+  "api_address": "https://t.alcy.cc/ycy",
+  "enable_online_wallpaper": false,
+  "hidden_patterns": [
+    ".*",
+    "workers",
+    "robots.txt",
+    "readme.md",
+    "readme.md.bak",
+    "readme.html",
+    "README.md",
+    "README.html",
+    "css",
+    "img",
+    "ttf",
+    "index.html",
+    "config.yaml",
+    "list.html",
+    "package_files.py",
+    "简历_test.md"
+  ],
+  "default_expanded": [
+    "resume"
+  ],
+  "default_collapsed": [
+    "application",
+    "resume/css",
+    "resume/img",
+    "resume/ttf"
+  ]
+}

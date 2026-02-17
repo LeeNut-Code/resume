@@ -1,0 +1,517 @@
+:root {
+    /* 颜色变量定义 */
+    --primary-bg: rgba(55, 101, 145, 0.3); /* 主要背景色，用于header、footer、文件列表等 */
+    --primary-bg-hover: rgba(147, 197, 253, 0.9); /* 悬停状态背景色，用于文件项、目录等 */
+    --border-color: rgba(217, 237, 254, 0.8); /* 边框颜色，用于所有元素的边框 */
+    --text-primary: #ebebf7; /* 主要文字颜色，用于标题、文件名等 */
+    --text-secondary: #eaf8f8; /* 次要文字颜色，用于文件大小、日期等 */
+    --accent-color: #3182ce; /* 强调色，用于链接悬停、目录图标等 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #1a1a1a;
+    background-image: url('workers/background/1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba( 0,0,0,0.3); 
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+header {
+    background: var(--primary-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header-info {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.header-info p {
+    margin-bottom: 4px;
+}
+
+.readme-section {
+    background: var(--primary-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.readme-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.readme-section p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.readme-section h1,
+.readme-section h2,
+.readme-section h3 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.readme-section h1 {
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.readme-section h2 {
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.readme-section h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.file-list {
+    background: var(--primary-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.file-list-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 150px 180px;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.file-list-content {
+    padding: 0;
+}
+
+.file-item {
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(217, 237, 254, 0.3);
+    display: grid;
+    grid-template-columns: 1fr 150px 180px;
+    gap: 16px;
+    align-items: center;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.file-item:hover {
+    border-left-color: var(--accent-color);
+    transform: translateX(2px);
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+}
+
+.file-name a {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.file-name a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.directory-icon {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+}
+
+.file-icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.file-size {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.file-date {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.footer {
+    margin-top: 24px;
+    padding: 20px;
+    background: var(--primary-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    font-size: 14px;
+    color: var(--text-primary);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    background: var(--primary-bg);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+    border: 1px solid var(--border-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--primary-bg);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+
+.details {
+    margin: 0;
+    padding: 0;
+}
+
+.directory-details {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.directory-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.directory-summary::-webkit-details-marker {
+    display: none;
+}
+
+.directory-summary:hover {
+    background: var(--primary-bg);
+}
+
+.subdirectory {
+    margin-left: 24px;
+    border-left: 2px solid var(--primary-bg);
+    padding-left: 16px;
+    transition: all 0.3s ease;
+}
+
+/* 根目录样式 */
+.root-directory {
+    margin: 0;
+}
+
+.root-directory .file-item {
+    font-weight: 500;
+}
+
+.root-directory .file-item:hover {
+    background: var(--primary-bg-hover);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.file-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.file-item:nth-child(1) { animation-delay: 0.05s; }
+.file-item:nth-child(2) { animation-delay: 0.1s; }
+.file-item:nth-child(3) { animation-delay: 0.15s; }
+.file-item:nth-child(4) { animation-delay: 0.2s; }
+.file-item:nth-child(5) { animation-delay: 0.25s; }
+
+/* 移动端适配 */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 12px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    header {
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        background: var(--primary-bg);
+        border: 1px solid var(--border-color);
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .header-info {
+        font-size: 13px;
+        color: var(--text-secondary);
+    }
+    
+    .readme-section {
+        padding: 16px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        background: var(--primary-bg);
+        border: 1px solid var(--border-color);
+    }
+    
+    .readme-section h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    
+    .readme-section p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .file-list {
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--primary-bg);
+        border: 1px solid var(--border-color);
+    }
+    
+    .file-list-header {
+        padding: 12px 16px;
+        font-size: 13px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .file-list-header div:nth-child(3) {
+        display: none;
+    }
+    
+    .file-item {
+        padding: 12px 16px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        border-left: 2px solid transparent;
+        border-bottom: 1px solid rgba(165, 214, 252, 0.3);
+    }
+    
+    .file-item:hover {
+        transform: none;
+        border-left-width: 2px;
+        border-left-color: var(--accent-color);
+        background: var(--primary-bg-hover);
+    }
+    
+    .file-name {
+        font-size: 14px;
+    }
+    
+    .file-name a {
+        font-size: 14px;
+        word-break: break-all;
+    }
+    
+    .directory-icon,
+    .file-icon {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+    
+    .directory-icon {
+        color: var(--accent-color);
+    }
+    
+    .file-size {
+        font-size: 13px;
+        opacity: 0.8;
+        color: var(--text-secondary);
+    }
+    
+    .file-date {
+        display: none;
+    }
+    
+    .subdirectory {
+        margin-left: 12px;
+        padding-left: 8px;
+        border-left-width: 1px;
+        border-left-color: rgba(165, 214, 252, 0.3);
+    }
+    
+    .footer {
+        padding: 16px;
+        margin-top: 16px;
+        font-size: 13px;
+        background: var(--primary-bg);
+        border: 1px solid var(--border-color);
+    }
+    
+    /* 优化触控目标大小 */
+    .directory-summary,
+    .file-name a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* 优化背景图片显示 */
+    body::before {
+        background: rgba(--primary-bg);
+    }
+    
+    /* 隐藏动画效果以提高移动端性能 */
+    .file-item {
+        animation: none;
+    }
+    
+    /* 确保目录可点击区域足够大 */
+    .directory-summary {
+        display: block;
+        width: 100%;
+    }
+    
+    .directory-summary:hover {
+        background: rgba(178, 216, 252, 0.8);
+    }
+}
+
+/* 针对小屏幕手机的额外优化 */
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+    
+    header {
+        padding: 12px;
+    }
+    
+    h1 {
+        font-size: 18px;
+    }
+    
+    .file-list-header,
+    .file-item {
+        padding: 10px 12px;
+    }
+    
+    .readme-section,
+    .file-list,
+    .footer {
+        padding: 12px;
+    }
+    
+    .subdirectory {
+        margin-left: 8px;
+        padding-left: 6px;
+    }
+}
+
+/* 平板设备适配 */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .file-list-header,
+    .file-item {
+        grid-template-columns: 1fr 120px 150px;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,11 @@
+head_title: 我的简历 | 求职展示
+language: zh-CN
+favicon: https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f31f.png
+page_title: 我的简历
+download_resume_url: resume/简历.pdf
+resume_pdf_url: resume/简历.pdf
+resume_job_pdf_url: resume/简历 (job).pdf
+resume_list_url: /list.html
+recruitment_info_url: /application/求职申请&HR须知.html
+footer_info: © 2026 个人简历 | 仅用于展示个人求职内容
+last_updated: '2026-02-17 13:34:52'

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>我的简历 | 求职展示</title>
+<!-- Favicon -->
+<link href="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f31f.png" rel="icon" type="image/png"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome -->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- 自定义配置 -->
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#F5F7FA',
+                        accent: '#FF7D00',
+                        dark: '#333333',
+                        medium: '#666666',
+                        light: '#999999'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+<!-- 自定义样式 -->
+<style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+            .skill-bar {
+                transition: width 1s ease-in-out;
+            }
+        }
+    </style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-secondary font-roboto text-dark">
+<!-- 导航栏 -->
+<header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="header">
+<div class="container mx-auto px-4 py-4">
+<div class="flex justify-between items-center">
+<div class="text-xl font-bold text-primary">我的简历</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#info">基本信息</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#education">教育背景</a><a class="text-medium hover:text-primary transition-colors duration-300" href="#experience">实习经历</a><a class="text-medium hover:text-primary transition-colors duration-300" href="#campus">校园经历</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#projects">个人项目</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#skills">专业技能</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#self-evaluation">自我评价</a>
+</nav>
+<button class="md:hidden text-dark" id="mobile-menu-btn">
+<i class="fa fa-bars text-xl"></i>
+</button>
+</div>
+<!-- 移动端菜单 -->
+<div class="md:hidden hidden mt-4 py-4 border-t" id="mobile-menu">
+<div class="flex flex-col space-y-4">
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#info">基本信息</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#education">教育背景</a><a class="text-medium hover:text-primary transition-colors duration-300" href="#experience">实习经历</a><a class="text-medium hover:text-primary transition-colors duration-300" href="#campus">校园经历</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#projects">个人项目</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#skills">专业技能</a>
+<a class="text-medium hover:text-primary transition-colors duration-300" href="#self-evaluation">自我评价</a>
+</div>
+</div>
+</div>
+</header>
+<!-- 个人信息区域 -->
+<section class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-indigo-50" id="info">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-1/3 flex justify-center">
+<div class="relative">
+<div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
+<img alt="头像" class="w-full h-full object-cover" src="resume/img/avatar.jpg"/>
+</div>
+<div class="absolute -bottom-3 -right-3 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+<i class="fa fa-user text-xl"></i>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<h1 class="text-4xl font-bold mb-4 text-shadow">熊大</h1>
+<div class="flex flex-wrap gap-4 mb-6">
+<div class="flex items-center gap-2 text-medium">
+<i class="fa fa-phone text-primary"></i>
+<span>+86 12345678901</span>
+</div>
+<div class="flex items-center gap-2 text-medium">
+<i class="fa fa-envelope text-primary"></i>
+<a class="hover:text-primary transition-colors duration-300" href="mailto:xiongda@xiongcun.com">xiongda@xiongcun.com</a>
+</div>
+<div class="flex items-center gap-2 text-medium">
+<i class="fa fa-globe text-primary"></i>
+<a class="hover:text-primary transition-colors duration-300" href="https://xiongdaspaces.com" target="_blank">xiongdaspaces.com</a>
+</div>
+<div class="flex items-center gap-2 text-medium">
+<i class="fa fa-github text-primary"></i>
+<a class="hover:text-primary transition-colors duration-300" href="https://github.com/XiongDa" target="_blank">XiongDa</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<div>
+<p class="text-medium mb-1">性别：男</p><p class="text-medium mb-1">年龄：22</p><p class="text-medium mb-1">民族：汉</p></div>
+<div>
+<p class="text-medium mb-1">学历：本科</p><p class="text-medium mb-1">专业：森林保护与管理</p><p class="text-medium mb-1">毕业院校：森林大学</p></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 items-center">
+<a class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 w-full sm:w-auto" href="resume/简历.pdf">
+<i class="fa fa-download"></i>
+                            下载简历
+                        </a>
+<div class="flex flex-col gap-2 w-full sm:w-auto">
+<a class="bg-white text-primary border border-primary px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/5 transition-colors duration-300 flex items-center gap-1 w-full" href="/list.html" target="_blank">
+<i class="fa fa-list"></i>
+                                简历文件列表
+                            </a>
+<a class="bg-white text-primary border border-primary px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/5 transition-colors duration-300 flex items-center gap-1 w-full" href="/application/求职申请&amp;HR须知.html" target="_blank">
+<i class="fa fa-file-text"></i>
+                                招聘须知
+                            </a>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-md w-full sm:w-auto flex justify-center">
+<div class="text-center">
+<img alt="二维码" class="w-24 h-24 mx-auto" src="resume/img/qrcode.gif"/>
+<p class="text-xs text-center mt-2 text-medium">扫码查看最新版本</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gradient-to-r from-purple-50 to-pink-50" id="education"><div class="container mx-auto px-4"><div class="text-center mb-12"><h2 class="text-3xl font-bold mb-2">教育背景</h2><div class="w-20 h-1 bg-primary mx-auto"></div></div><div class="max-w-4xl mx-auto"><div class="bg-white rounded-xl p-8 shadow-lg overflow-hidden border border-gray-100 mb-8"><div class="font-semibold text-xl flex items-center gap-3 mb-4"><i class="fa fa-graduation-cap text-primary text-xl"></i><span>森林大学</span></div><div class="text-primary font-medium mb-4 flex items-center gap-2"><i class="fa fa-calendar text-primary"></i>2022.09 - 2026.06（预计毕业）</div><div class="text-medium bg-primary/10 text-primary px-4 py-2 rounded-full text-sm mb-6 inline-block">森林保护与管理</div><div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 shadow-sm mt-6"><h3 class="font-medium mb-6 flex items-center gap-3 text-lg text-gray-800"><i class="fa fa-book text-primary"></i><span>主修课程</span></h3><div class="relative"><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-h-64 overflow-hidden transition-all duration-500" id="courses-grid-single"><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">森林生态学</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">野生动物保护</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">森林防火</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">森林管理学</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">林业政策法规</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">自然保护区管理</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">生态旅游</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">环境科学</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">植物学</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">动物学</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">地理信息系统</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">生态监测</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">森林资源调查</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">生物多样性保护</div><div class="bg-white px-4 py-3 rounded-lg text-sm text-medium shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 border border-gray-100">环境影响评价</div></div></div><button class="mt-4 text-primary font-medium flex items-center gap-2 hover:underline focus:outline-none" id="toggle-courses-single">展开全部<i class="fa fa-chevron-down"></i></button></div></div></div><script>
+                        // 单一教育背景的主修课程折叠逻辑
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const toggleBtn = document.getElementById('toggle-courses-single');
+                            const coursesGrid = document.getElementById('courses-grid-single');
+
+                            if (toggleBtn && coursesGrid) {
+                                toggleBtn.addEventListener('click', function() {
+                                    if (coursesGrid.classList.contains('max-h-64')) {
+                                        // 展开
+                                        coursesGrid.classList.remove('max-h-64');
+                                        coursesGrid.classList.add('max-h-[none]');
+                                        toggleBtn.innerHTML = '收起 <i class="fa fa-chevron-up"></i>';
+                                    } else {
+                                        // 收起
+                                        coursesGrid.classList.add('max-h-64');
+                                        coursesGrid.classList.remove('max-h-[none]');
+                                        toggleBtn.innerHTML = '展开全部 <i class="fa fa-chevron-down"></i>';
+                                    }
+                                });
+                            }
+                        });
+                    </script></div></section><section class="py-20 bg-gradient-to-r from-green-50 to-teal-50" id="experience"><div class="container mx-auto px-4"><div class="text-center mb-12"><h2 class="text-3xl font-bold mb-2">实习经历</h2><div class="w-20 h-1 bg-primary mx-auto"></div></div><div class="max-w-4xl mx-auto"><div class="bg-white rounded-xl p-8 shadow-lg overflow-hidden border border-gray-100 mb-8"><div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6"><div class="font-semibold text-xl mb-4 md:mb-0">森林环境保护中心 （狗熊岭）</div><div class="text-primary font-medium mb-4 md:mb-0 flex items-center gap-2"><i class="fa fa-calendar text-primary"></i>2026.01-2026.05</div><div class="text-medium bg-primary/10 text-primary px-4 py-2 rounded-full text-sm">森林守护者</div></div><ul>
+<li><strong>森林生态数据监测与保护：</strong>基于"生态平衡"视角与数据治理理念，负责森林环境数据的收集、分析与保护工作。通过执行严格的生态监测流程，精准核对森林植被、野生动物活动、水质土壤等关键生态指标，有效拦截并修正因环境变化导致的生态失衡问题。通过建立完整的生态数据档案，不仅保障了森林生态系统的健康发展，更为森林保护策略的制定提供了科学依据，间接提升了狗熊岭的整体生态环境质量。</li>
+</ul></div></div></div></section><section class="py-20 bg-gradient-to-r from-yellow-50 to-orange-50" id="campus"><div class="container mx-auto px-4"><div class="text-center mb-12"><h2 class="text-3xl font-bold mb-2">校园经历</h2><div class="w-20 h-1 bg-primary mx-auto"></div></div><div class="max-w-4xl mx-auto"><div class="space-y-4"><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加了森林大学绿色志愿者服务中心-森林植树公益活动</div><div class="text-primary">2025.06</div></div><p class="text-medium text-sm">践行生态责任</p></div><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加2024年森林大学野外生存技能大赛</div><div class="text-primary">2024.09</div></div><p class="text-medium text-sm">提升野外生存与环境适应能力</p></div><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加第十届森林保护知识大赛</div><div class="text-primary">2024.09</div></div><p class="text-medium text-sm">拓展森林保护与生态认知</p></div><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加森林大学-2024年生态创新交流会活动</div><div class="text-primary">2024.06</div></div><p class="text-medium text-sm">接触生态保护项目，了解技术应用场景</p></div><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加森林大学自然协会野外调研专题培训活动</div><div class="text-primary">2024.05</div></div></div><div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"><div class="flex justify-between items-center mb-2"><div class="font-medium">参加森林大学自然协会人文森林：小森林，大世界自然探索活动</div><div class="text-primary">2023.06</div></div></div></div></div></div></section>
+<section class="py-20 bg-gradient-to-r from-cyan-50 to-blue-50" id="projects">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">个人项目</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="max-w-4xl mx-auto"><div class="bg-white rounded-xl p-6 shadow-sm card-hover"><div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4"><div class="font-semibold text-lg mb-2 md:mb-0">森林博客·xiongda.com</div><div class="text-primary font-medium mb-2 md:mb-0">2024.4——至今</div></div><p>聚焦"森林保护 + 生态分享"，不定期撰写关于森林保护技术、生态环境、个人环保探索等主题的文章。
+通过内容沉淀与知识分享，锻炼了结构化表达、信息筛选与生态保护意识传播能力。
+博客采用静态站点部署，体现基础前端与部署能力，访问稳定，内容持续更新。</p></div></div></div>
+</section>
+<section class="py-20 bg-gradient-to-r from-orange-50 to-red-50" id="skills">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">专业技能</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="max-w-2xl mx-auto">
+<div class="relative">
+<!-- 时间线 -->
+<div class="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20"></div>
+<!-- 技能项 -->
+<div class="space-y-6"><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-language"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">具备一定的英语语言阅读能力</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-line-chart"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">学习过森林保护理论基础，了解生态系统分析、野生动物保护、森林管理等核心框架。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-pencil"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">具备内容输出能力，能独立进行文案撰写、编辑（精通Markdown）及多媒体内容辅助创作。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-code"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">能够使用Python进行基础的生态数据处理与分析，辅助森林资源调查（如数据清洗、简单可视化）。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-magic"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">熟练运用AI工具（如ChatGPT, Copilot）大幅提升内容创作、方案构思和代码编写的效率。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-html5"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">掌握HTML/CSS基础，可独立进行网页的简单修改与调试，了解前端用户体验。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-film"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">熟悉生态监测设备操作，具备野外数据采集与分析能力。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-file-excel-o"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">了解Microsoft Office（Word, Excel, PowerPoint），可高效完成报告、数据图表及提案演示。</p></div></div><div class="flex gap-4"><div class="relative"><div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white z-10"><i class="fa fa-terminal"></i></div></div><div class="bg-white p-4 rounded-lg shadow-sm flex-1 hover:shadow-md transition-shadow duration-300"><p class="text-medium">熟练使用VS Code等开发环境，具备与技术团队协作的基本素养。</p></div></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gradient-to-r from-indigo-50 to-blue-50" id="self-evaluation">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-2">自我评价</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="bg-white rounded-xl p-8 shadow-sm">
+<p class="text-medium mb-6 leading-relaxed"><p>作为一名森林保护与管理专业的学生，我不仅系统掌握了生态保护理论，更通过独立运营森林博客、参与实践，培养了强大的自主学习、数据思维和动手能力。我擅长利用技术工具（如Python、AI、自动化脚本）提升工作与学习各环节的效率，对"技术赋能生态保护"有深刻的理解和实践。我具备强烈的责任心、结果导向和快速适应能力，渴望在贵单位的相关岗位上，将我的能力转化为实际的生态保护价值。</p>
+<p><strong>我有很多的不足，但是我会努力学习、调整和改变自己，补齐不足，使自己能够适应相关岗位。
+加油，熊大同学！</strong></p></p>
+</div>
+</div>
+</div>
+</section>
+<!-- 页脚 -->
+<footer class="py-12 bg-dark text-white" id="footer">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+</div>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-white transition-colors duration-300" href="https://xiongdaspaces.com" target="_blank">
+<i class="fa fa-globe text-xl"></i>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300" href="https://github.com/XiongDa-Code" target="_blank">
+<i class="fa fa-github text-xl"></i>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300" href="mailto:xiongda@xiongcun.com">
+<i class="fa fa-envelope text-xl"></i>
+</a>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>© 2026 个人简历 | 仅用于展示个人求职内容</p>
+<p class="mt-2 text-sm">最后更新：2026-02-17 13:34:52</p>
+</div>
+<!-- 回到顶部按钮 -->
+<button class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300" id="back-to-top">
+<i class="fa fa-arrow-up"></i>
+</button>
+<!-- JavaScript -->
+<script>
+        // 移动端菜单切换
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        const header = document.getElementById('header');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+
+            // 导航高亮
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-medium');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.remove('text-medium');
+                            link.classList.add('text-primary');
+                        }
+                    });
+                }
+            });
+        });
+
+        // 回到顶部按钮
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 技能条动画
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</div></footer></body>
+</html>
